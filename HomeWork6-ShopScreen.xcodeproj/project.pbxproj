@@ -37,6 +37,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A685F282B9B3DE200AF0B1E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0A685F2B2B9B3EB800AF0B1E /* Plist */,
+				0A685F2A2B9B3EA200AF0B1E /* LaunchScreen */,
+				0AA66DE02B9B3BE500712A34 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		0A685F292B9B3E1200AF0B1E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0A685F2C2B9B3ED000AF0B1E /* AppDelegate */,
+				0A685F2D2B9B3EE300AF0B1E /* Models */,
+				0A685F2E2B9B3EF400AF0B1E /* Storyboard */,
+				0A685F2F2B9B3F0700AF0B1E /* ViewController */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		0A685F2A2B9B3EA200AF0B1E /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0AA66DE22B9B3BE500712A34 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		0A685F2B2B9B3EB800AF0B1E /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				0AA66DE52B9B3BE500712A34 /* Info.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		0A685F2C2B9B3ED000AF0B1E /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				0AA66DD72B9B3BDE00712A34 /* AppDelegate.swift */,
+				0AA66DD92B9B3BDE00712A34 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		0A685F2D2B9B3EE300AF0B1E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A685F2E2B9B3EF400AF0B1E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0AA66DDD2B9B3BDE00712A34 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		0A685F2F2B9B3F0700AF0B1E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0AA66DDB2B9B3BDE00712A34 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		0AA66DCB2B9B3BDE00712A34 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +125,8 @@
 		0AA66DD62B9B3BDE00712A34 /* HomeWork6-ShopScreen */ = {
 			isa = PBXGroup;
 			children = (
-				0AA66DD72B9B3BDE00712A34 /* AppDelegate.swift */,
-				0AA66DD92B9B3BDE00712A34 /* SceneDelegate.swift */,
-				0AA66DDB2B9B3BDE00712A34 /* ViewController.swift */,
-				0AA66DDD2B9B3BDE00712A34 /* Main.storyboard */,
-				0AA66DE02B9B3BE500712A34 /* Assets.xcassets */,
-				0AA66DE22B9B3BE500712A34 /* LaunchScreen.storyboard */,
-				0AA66DE52B9B3BE500712A34 /* Info.plist */,
+				0A685F282B9B3DE200AF0B1E /* Resource */,
+				0A685F292B9B3E1200AF0B1E /* Source */,
 			);
 			path = "HomeWork6-ShopScreen";
 			sourceTree = "<group>";
