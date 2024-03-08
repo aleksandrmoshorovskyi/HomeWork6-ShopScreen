@@ -11,9 +11,17 @@ class ImgCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    var menu: Menu? {
+//    var menu: Menu? {
+//        didSet {
+//            if let image = menu?.imageName {
+//                imageView.image = UIImage(named: image)
+//            }
+//        }
+//    }
+    
+    var myImage: String? {
         didSet {
-            if let image = menu?.imageName {
+            if let image = myImage {
                 imageView.image = UIImage(named: image)
             }
         }
