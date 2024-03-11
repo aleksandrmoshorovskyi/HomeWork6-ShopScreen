@@ -10,24 +10,18 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    @IBOutlet weak var TitleLable: UILabel!
-    
-    var itemMenuArray: [Menu] = {
-        var img1 = Menu()
-        img1.name = "1"
-        img1.imageName = "motherboard_pic1"
-        
-        var img2 = Menu()
-        img2.name = "1"
-        img2.imageName = "motherboard_pic2"
-        
-        return [img1, img2]
-    }()
+    @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var codeLabel: UILabel!
+    @IBOutlet weak var priceLable: UILabel!
+    @IBOutlet weak var textLable: UILabel!
+    @IBOutlet weak var text2Lable: UILabel!
+    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var buy2Button: UIButton!
     
     var goods1 = Goods(name: "Материнська плата Asus rog strix b560-e Gaming wifi (s1200 Intel b560 ddr4)",
                        code: "370030773",
                        price: 9531.00,
+                       currency: "₴",
                        images: ["motherboard_pic1",
                                 "motherboard_pic2",
                                 "motherboard_pic3",
@@ -40,7 +34,11 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        TitleLable.text = goods1.name
+        titleLable.text = goods1.name
+        codeLabel.text = "Код \(goods1.code)"
+        priceLable.text = "\(goods1.price)"
+        textLable.text = "Самовивіз з наших магазинів"
+        text2Lable.text = "Забрати завтра з 12:00"
     }
         
 }
