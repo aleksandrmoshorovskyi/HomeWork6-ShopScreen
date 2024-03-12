@@ -17,15 +17,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var text2Lable: UILabel!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var buy2Button: UIButton!
+    @IBOutlet weak var pageIndicator: UIPageControl!
     
     @IBAction func ckickedBuyBtn(_ sender: UIButton) {
-        print("ckickedBuyBtn")
+        //print("ckickedBuyBtn")
         self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func clickedBuy2Btn(_ sender: UIButton) {
-        print("clickedBuy2Btn")
+        //print("clickedBuy2Btn")
         self.present(alert2, animated: true, completion: nil)
+    }
+    
+    @IBAction func pageCntrl(_ sender: UIPageControl) {
+        
     }
     
     var goods1 = Goods(name: "Материнська плата Asus rog strix b560-e Gaming wifi (s1200 Intel b560 ddr4)",
@@ -60,13 +65,9 @@ class ViewController: UIViewController {
         let str2Attribute = [ NSAttributedString.Key.foregroundColor: UIColor.systemGreen ]
         let lableStr2Attributed = NSAttributedString(string: lableStr2, attributes: str2Attribute)
         
-        var attributedString = NSMutableAttributedString(string: "")
+        let attributedString = NSMutableAttributedString(string: "")
         attributedString.append(lableStr1Attributed)
         attributedString.append(lableStr2Attributed)
-        
-
-        // set attributed text on a UILabel
-        //myLabel.attributedText = myAttrString
         
         titleLable.text = goods1.name
         codeLabel.text = "Код \(goods1.code)"
@@ -83,6 +84,9 @@ class ViewController: UIViewController {
         
         alert.addAction(aletalertAction)
         alert2.addAction(aletalertAction2)
+        
+        pageIndicator.numberOfPages = goods1.images.count
+        //pageIndicator.currentPage = 0
     }
         
 }
@@ -97,10 +101,21 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         if let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImgCell_id", for: indexPath) as? ImgCollectionViewCell {
             
             itemCell.myImage = goods1.images[indexPath.row]
-            
             return itemCell
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        //print("\(indexPath.row)")
+        //pageIndicator.currentPage = indexPath.row
+        
+        //НЕ ПРАЦЮЄ - вивидоть 0, потім одразу 1,2, далі нормально - ???
+        //довелось використовувати - scrollViewDidEndDecelerating
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let scrollPosition = scrollView.contentOffset.x / view.frame.width
+        pageIndicator.currentPage = Int( round(scrollPosition) )
+    }
 }
-

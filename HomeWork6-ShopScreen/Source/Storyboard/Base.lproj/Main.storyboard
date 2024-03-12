@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRF-re-Xcu">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MXn-IB-7BT">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MXn-IB-7BT">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="270"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -61,9 +61,23 @@
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sa-kg-ULX" userLabel="indicators">
                                         <rect key="frame" x="0.0" y="270" width="393" height="30"/>
+                                        <subviews>
+                                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x15-dB-Nfn">
+                                                <rect key="frame" x="175.33333333333334" y="2" width="42.666666666666657" height="26"/>
+                                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.61768960949999996" blue="0.22672009470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="pageCntrl:" destination="HU7-xe-n6Y" eventType="valueChanged" id="cMJ-xP-nbs"/>
+                                                </connections>
+                                            </pageControl>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="x15-dB-Nfn" firstAttribute="centerY" secondItem="8sa-kg-ULX" secondAttribute="centerY" id="5RB-i9-0Jh"/>
+                                            <constraint firstAttribute="bottom" secondItem="x15-dB-Nfn" secondAttribute="bottom" constant="2" id="atu-WY-SwP"/>
+                                            <constraint firstItem="x15-dB-Nfn" firstAttribute="top" secondItem="8sa-kg-ULX" secondAttribute="top" constant="2" id="bll-1U-XgG"/>
                                             <constraint firstAttribute="height" constant="30" id="qVR-0N-U5G"/>
+                                            <constraint firstItem="x15-dB-Nfn" firstAttribute="centerX" secondItem="8sa-kg-ULX" secondAttribute="centerX" id="uSC-KA-xLE"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhK-Gf-ZHT" userLabel="FooterView">
@@ -290,6 +304,7 @@
                         <outlet property="buyButton" destination="qqL-FX-ZBE" id="BrV-hG-s1g"/>
                         <outlet property="codeLabel" destination="fr3-hy-IBv" id="g7L-yf-Uov"/>
                         <outlet property="collectionView" destination="MXn-IB-7BT" id="Arw-t0-qHi"/>
+                        <outlet property="pageIndicator" destination="x15-dB-Nfn" id="XI9-L0-Uqj"/>
                         <outlet property="priceLable" destination="GAI-9U-Tzi" id="VHh-ot-64z"/>
                         <outlet property="text2Lable" destination="hmZ-aK-3Od" id="bfn-g7-sET"/>
                         <outlet property="textLable" destination="Gn5-ib-9j1" id="OXm-Cb-rur"/>
