@@ -8,7 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - @IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var codeLabel: UILabel!
@@ -19,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var buy2Button: UIButton!
     @IBOutlet weak var pageIndicator: UIPageControl!
     
+    // MARK: - @IBActions
     @IBAction func ckickedBuyBtn(_ sender: UIButton) {
         //print("ckickedBuyBtn")
         self.present(alert, animated: true, completion: nil)
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
         
     }
     
+    // MARK: - @vars
     var goods1 = Goods(name: "Материнська плата Asus rog strix b560-e Gaming wifi (s1200 Intel b560 ddr4)",
                        code: "370030773",
                        price: 9531.00,
@@ -49,7 +52,7 @@ class ViewController: UIViewController {
     let alert2 = UIAlertController(title: "Купити зараз", message: "Цією дією Ви погоджуєтесь з умовами договору!", preferredStyle: .alert)
     let aletalertAction2 = UIAlertAction(title: "OK", style: .default, handler: { _ in NSLog("The \"OK\" alert occured.")})
     
-    
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,7 +74,7 @@ class ViewController: UIViewController {
         
         titleLable.text = goods1.name
         codeLabel.text = "Код \(goods1.code)"
-        priceLable.text = "\(goods1.price)"
+        priceLable.text = "\(String(format: "%.0f", goods1.price)) \(goods1.currency)"
         //textLable.text = "Самовивіз з наших магазинів"
         textLable.attributedText = attributedString
         text2Lable.text = "Забрати завтра з 12:00"
@@ -91,7 +94,8 @@ class ViewController: UIViewController {
         
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {     
+// MARK: - ViewController Protocol
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       
         return goods1.images.count
@@ -106,6 +110,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         return UICollectionViewCell()
     }
     
+    // MARK: - UIPageControl
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         //print("\(indexPath.row)")
         //pageIndicator.currentPage = indexPath.row
